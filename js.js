@@ -298,7 +298,7 @@ function checkElementRemoved() {
     const targetElement = document.querySelector('split-testing');
     if (!targetElement) {
 
-        urlAndDomElementChecker()
+        urlAndDomElementChecker(checkIfElementIsRemoved);
     }
 }
 
@@ -329,5 +329,5 @@ function checkIfElementIsRemoved() {
 
 (function () {
     observeUrl()
-    urlAndDomElementChecker()
+    urlAndDomElementChecker(checkIfElementIsRemoved);
 })();
