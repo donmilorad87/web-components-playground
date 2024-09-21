@@ -2,13 +2,15 @@
 function urlAndDomElementChecker(mutationObserverFunction = false) {
     if (window.location.origin + window.location.pathname === "https://execbalance.com/products/splittesting-beanie") {
         if (document.querySelector('.product__description')) {
+            if (document.querySelector('.product__description')) {
+                const splitTesting = new SplitTesting({});
 
-            const splitTesting = new SplitTesting({});
+                let productDesription = document.querySelector('.product__description')
+                productDesription.parentElement.insertBefore(splitTesting, productDesription)
 
-            let productDesription = document.querySelector('.product__description')
-            productDesription.parentElement.insertBefore(splitTesting, productDesription)
-            if (mutationObserverFunction) {
-                mutationObserverFunction()
+                if (mutationObserverFunction) {
+                    mutationObserverFunction()
+                }
             }
         }
     }
@@ -304,7 +306,6 @@ function checkElementRemoved() {
 
 function checkIfElementIsRemoved() {
 
-
     // Start observing the body or a specific parent element
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
@@ -325,7 +326,6 @@ function checkIfElementIsRemoved() {
     checkElementRemoved();
 
 }
-
 
 (function () {
     observeUrl()
