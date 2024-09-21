@@ -61,7 +61,12 @@
         } else {
             if (document.querySelector('split-testing')) {
                 document.querySelector('split-testing').remove()
-                deleteObserver.disconnect()
+                if (deleteObserver !== null && typeof deleteObserver !== 'undefined') {
+                    deleteObserver.disconnect()
+                    deleteObserver = null
+                
+                }
+
             }
         }
     }
