@@ -45,7 +45,7 @@ class SplitTesting extends HTMLElement {
                 background: #f4f4f4;
                 width: fit-content;
                 border: 1px solid rgba(6, 4, 3, 0.1);
-                border-radius: 4px;
+                border-radius: 0px 4px 4px 4px;
             }
 
             split-testing .splitTestContainer .contentDivOuter .imageDiv{
@@ -53,11 +53,17 @@ class SplitTesting extends HTMLElement {
                 background: #d7d7d7;
                 padding: 1.5rem 1rem;
                 align-items: center;
+                width: 30%;
             }
+
+            split-testing .splitTestContainer .contentDivOuter .imageDiv img{
+                width: 100%;
+            }
+
             split-testing .splitTestContainer .contentDivOuter .contentDiv{
                 padding: 1rem 4rem 1rem 2rem;
                 flex-grow: 1;
-                width: 100%;
+                width: 70%;
             }
             split-testing .splitTestContainer .contentDivOuter .contentDiv .contentDivH4{ 
 
@@ -122,11 +128,12 @@ class SplitTesting extends HTMLElement {
                 margin: 0;
                 background: #443f3e;
                 color: white;
-                padding: 0 3rem;
+                padding: 0 0rem;
                 border-radius: 2px;
                 border: none;
                 line-height: 1;
-                min-height: 32px;
+                min-height: 26px;
+                min-width: 88px;
 
             }
         `
@@ -219,7 +226,7 @@ class SplitTesting extends HTMLElement {
                     <input type="hidden" name="id" value="42143947030769">
                     <div class="product-form__buttons">
                         <button type="submit" name="add" class="product-form__submit button button--full-width button--secondary">
-                            <span>Add to cart</span>
+                            <span>ADD</span>
                             <div class="loading-overlay__spinner hidden">
                                 <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                                     <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
@@ -232,7 +239,7 @@ class SplitTesting extends HTMLElement {
                 </form>
             </product-form>
         `
-        
+
         innerContentDiv.append(addToChartButton)
         contentDivOuter.append(contentDiv)
 
