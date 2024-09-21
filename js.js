@@ -59,14 +59,14 @@
                 });
             }
         } else {
+
             if (document.querySelector('split-testing')) {
                 document.querySelector('split-testing').remove()
-                if (deleteObserver !== null && typeof deleteObserver !== 'undefined') {
-                    deleteObserver.disconnect()
-                    deleteObserver = null
-                
-                }
+            }
 
+            if (deleteObserver !== null && typeof deleteObserver !== 'undefined') {
+                deleteObserver.disconnect()
+                deleteObserver = null
             }
         }
     }
@@ -112,7 +112,10 @@
         const targetElement = document.querySelector('split-testing');
         if (!targetElement) {
             // Element is removed from the DOM, we disconect this observer, function urlAndDomElementChecker will add new one
-            deleteObserver.disconnect();
+
+            if (deleteObserver) {
+                deleteObserver.disconnect();
+            }
             urlAndDomElementChecker(checkIfElementIsRemoved);
         }
     }
