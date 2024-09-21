@@ -2,7 +2,7 @@
 function urlAndDomElementChecker(mutationObserverFunction = false) {
     if (window.location.origin + window.location.pathname === "https://execbalance.com/products/splittesting-beanie") {
         if (document.querySelector('.product__description')) {
-            if (!document.querySelector('.product__description')) {
+            if (!document.querySelector('.split-testing')) {
                 const splitTesting = new SplitTesting({});
 
                 let productDesription = document.querySelector('.product__description')
